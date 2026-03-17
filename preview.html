@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brewed Awakening</title>
+
+<style>
+:root {
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --accent-gold: #c5a47e;
+    --text-light: #f5f5f5;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--dark-bg);
+    color: var(--text-light);
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #000;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.navbar a:hover {
+    color: var(--accent-gold);
+}
+
+/* HERO */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background: var(--accent-gold);
+    border: none;
+    cursor: pointer;
+}
+
+/* SECTION */
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* MENU */
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--accent-gold);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.price {
+    color: var(--accent-gold);
+    margin: 10px 0;
+}
+
+button {
+    padding: 8px 15px;
+    background: var(--accent-gold);
+    border: none;
+    cursor: pointer;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>Brewed</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Brewed Coffee</h1>
+    <button onclick="scrollToMenu()">Explore Menu</button>
+</div>
+
+<!-- MENU -->
+<div class="container" id="menu">
+    <h2 class="section-title">Our Coffee</h2>
+
+    <div class="menu">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a">
+            <h3>Espresso</h3>
+            <p>Strong & bold coffee shot</p>
+            <div class="price">₹120</div>
+            <button onclick="order('Espresso')">Order</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+            <h3>Latte</h3>
+            <p>Milk + smooth espresso</p>
+            <div class="price">₹180</div>
+            <button onclick="order('Latte')">Order</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1572441713132-51c75654db73">
+            <h3>Mocha</h3>
+            <p>Chocolate + coffee mix</p>
+            <div class="price">₹200</div>
+            <button onclick="order('Mocha')">Order</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1605478902405-5c2f0bba02e5">
+            <h3>Affogato</h3>
+            <p>Ice cream + espresso</p>
+            <div class="price">₹220</div>
+            <button onclick="order('Affogato')">Order</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div class="container contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p>📍 Surat, India</p>
+    <p>📞 9876543210</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2026 Brewed Coffee
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function order(item){
+    alert("Order placed for " + item + " ☕");
+}
+
+function scrollToMenu(){
+    document.getElementById("menu").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
